@@ -1,0 +1,54 @@
+<?xml version="1.0"?>
+<!DOCTYPE project>
+
+<!-- Beginner Tutorial: http://ant.apache.org/manual/tutorial-HelloWorldWithAnt.html -->
+
+<project name="JSDocs Generator" default="build" basedir="../"> <!-- one back since we're in build directory -->
+
+  <!-- Declare variables needed by JSDocs (or move to property file) -->
+
+  <property name="tools.dir" value="build/tools"/><!-- relative to build directory -->
+  <property name="jsdocs.jarName" value="jsdoc-toolkit-ant-task-1.1.2.jar"/>
+  <property name="jsdocs.dirName" value="jsdoc_toolkit-2.4.0"/>
+
+  <property name="jsdocs.input.dir" value="./js"/><!-- relative to build directory -->
+  <property name="jsdocs.output.dir" value="./docs"/><!-- relative to build directory -->
+  <property name="jsdocs.includes" value="*.js, **/*.js"/>
+  <property name="jsdocs.excludes" value="libs/*.js"/><!-- Exclude all third party plugins -->
+  
+
+    <target name="build">
+        <echo message="Running target BUILD"/>
+        <antcall target="jsdoc"/>
+
+        <!-- Do other build tasks, etc -->
+    </target>
+
+
+    <!-- This is the jsdocs task --> 
+    <!-- Using an Ant task wrapper around the JsDoc Toolkit application -->
+    <!-- See http://code.google.com/p/jsdoc-toolkit-ant-task/ -->
+    <taskdef 
+        name="jsdoctoolkit" 
+        classname="uk.co.darrenhurley.ant.tasks.JsDocToolkit" 
+        classpath="${tools.dir}/${jsdocs.jarName};
+                   ${tools.dir}/${jsdocs.dirName}/java/classes/js.jar"
+    />
+
+  <target name="jsdoc" description="Generates JSDocs output">  
+    <echo message="Generating JSDocs documentation"/>
+    
+    <jsdoctoolkit 
+        jsdochome="${tools.dir}/${jsdocs.dirName}/" 
+        template="jsdoc" 
+        outputdir="${jsdocs.output.dir}/">
+
+      <fileset 
+          dir="${jsdocs.input.dir}"
+          includes="${jsdocs.includes}"
+          excludes="${jsdocs.excludes}"/>
+    </jsdoctoolkit>
+  </target>
+
+</project>
+
