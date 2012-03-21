@@ -1,20 +1,84 @@
 @import "normalize.less";
 
+/* ===== Bootstrap Imports ========================================================
+   See: http://twitter.github.com/bootstrap/
+   ========================================================================== */
+
+@import "libs/bootstrap/bootstrap.less";
+
+// todo: better ordering of boostrap and h5pb imports
+/* current order is...
+
+	// CSS Reset
+	reset.less
+
+	// Core variables and mixins
+	variables.less
+	mixins.less
+
+	// Grid system and page structure
+	scaffolding.less
+	grid.less
+	layouts.less
+
+	// Base CSS
+	type.less
+	code.less
+	forms.less
+	tables.less
+
+	// Components: common
+	sprites.less
+	dropdowns.less
+	wells.less
+	component-animations.less
+	close.less
+
+	// Components: Buttons & Alerts
+	buttons.less
+	button-groups.less
+	alerts.less (Note: alerts share common CSS with buttons and thus have styles in)buttons.less
+
+	// Components: Nav
+	navs.less
+	navbar.less
+	breadcrumbs.less
+	pagination.less
+	pager.less
+
+	// Components: Popovers
+	modals.less
+	tooltip.less
+	popovers.less
+
+	// Components: Misc
+	thumbnails.less
+	labels.less
+	badges.less
+	progress-bars.less
+	accordion.less
+	carousel.less
+	hero-unit.less
+
+	// Utility classes
+	utilities.less (Has to be last to override when necessary)
+*/
+
+
 
 /* ===== Primary Styles ========================================================
    Author:
    ========================================================================== */
 
+body {
+	color: pink;
+	font-weight: bold;
+}
 
-
-
-
-
-
-
-
+      
 
 
 @import "media-queries.less";
 @import "helpers.less";
 @import "print.less";
+
