@@ -518,17 +518,17 @@
 
   .core (@gridColumnWidth, @gridGutterWidth) {
 
-//    .spanX (@index) when (@index > 0) {
-//      (~".span@{index}") { .span(@index); }
-//     .spanX(@index - 1);
-//    }
-//    .spanX (0) {}
+    .spanX (@index) when (@index > 0) {
+      (~".span@{index}") { .span(@index); }
+     .spanX(@index - 1);
+    }
+    .spanX (0) {}
 
-//   .offsetX (@index) when (@index > 0) {
-//      (~".offset@{index}") { .offset(@index); }
-//      .offsetX(@index - 1);
-//    }
-//    .offsetX (0) {}
+   .offsetX (@index) when (@index > 0) {
+      (~".offset@{index}") { .offset(@index); }
+      .offsetX(@index - 1);
+    }
+    .offsetX (0) {}
 
     .offset (@columns) {
       margin-left: (@gridColumnWidth * @columns) + (@gridGutterWidth * (@columns - 1)) + (@gridGutterWidth * 2);
@@ -561,10 +561,10 @@
 
   .fluid (@fluidGridColumnWidth, @fluidGridGutterWidth) {
 
-//    .spanX (@index) when (@index > 0) {
-//      (~"> .span@{index}") { .span(@index); }
-//      .spanX(@index - 1);
-//    }
+    .spanX (@index) when (@index > 0) {
+      (~"> .span@{index}") { .span(@index); }
+      .spanX(@index - 1);
+    }
     .spanX (0) {}
 
     .span (@columns) {
