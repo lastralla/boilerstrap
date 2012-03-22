@@ -26,6 +26,10 @@
 @import "libs/bootstrap/grid.less";
 @import "libs/bootstrap/layouts.less";
 
+// import Semantic-gs grid
+@import "libs/semantic-gs/grid.less";
+
+
 // Base CSS
 @import "libs/bootstrap/type.less";
 @import "libs/bootstrap/code.less";
@@ -73,7 +77,33 @@
    Author:
    ========================================================================== */
 
-   
+#semanticGS-test {
+
+	.sem-sidebar {
+	   .column(3);
+	}
+
+	.sem-maincolumn {
+	   .column(9);
+
+			.subOuter {
+				.row(9);
+				.sub {
+					.column(3, 9);
+					margin-bottom: 10px;
+					background: #efefef;
+
+					&:first-child {
+						.column(5);
+						.push(2);
+						background: #efefff;
+						margin-bottom: 10px;
+					}
+				}
+
+			}
+	}
+}   
 
 
 @import "media-queries.less";
