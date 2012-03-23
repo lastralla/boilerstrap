@@ -1,7 +1,7 @@
 Boilerstrap (aka Frankenstein)
 =================
 
-Version: 0.0.0.0.0.1!
+Version: 0.0.1
 
 A "test" project that integrates [HTML5 Boilerplate](http://html5boilerplate.com/) and [Twitter Bootstrap](http://twitter.github.com/bootstrap/)!
 
