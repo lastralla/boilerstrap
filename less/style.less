@@ -26,6 +26,10 @@
 @import "libs/bootstrap/grid.less";
 @import "libs/bootstrap/layouts.less";
 
+// import Semantic-gs grid
+@import "libs/semantic-gs/grid.less";
+
+
 // Base CSS
 @import "libs/bootstrap/type.less";
 @import "libs/bootstrap/code.less";
@@ -73,7 +77,49 @@
    Author:
    ========================================================================== */
 
-   
+
+/* ***** Sample implementation od semantic.gs grid ***** */
+
+// override grid constants
+@column-width: 90;
+@gutter-width: 10;
+@columns: 12;
+
+#semanticGS {
+	// prevent collapsing
+	width: /*100%*/ 1320px;
+	overflow: hidden;
+
+	margin: 0 auto;
+
+	.sidebar {
+	   .column(3);
+	}
+
+	.maincolumn {
+	   .column(9);
+
+			.itemList {
+				.row(9);
+				.item {
+					.column(3, 9);
+					
+					&:first-child {
+						.column(5);
+						.push(2);
+						background: #efefff;
+						margin-bottom: 10px;
+					}
+
+					// basic styles
+					min-height: 40px;
+					margin-bottom: 10px;
+					background: #efefef;
+				}
+
+			}
+	}
+}   
 
 
 @import "media-queries.less";
