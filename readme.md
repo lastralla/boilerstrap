@@ -7,11 +7,11 @@ A "test" project that integrates [HTML5 Boilerplate](http://html5boilerplate.com
 
 The goal is to also include other smaller CSS libraries (e.g. JQuery UI) and setup config variables to switch between different components. Example scenario: Use Twitter Bootstrap but plug in HTML5 Boilerplate's reset styles and JQuery UI's Dialog styles, etc.
 
-Current Libraries:
+Current Libraries Included:
 ----------
 - [HTML5 Boilerplate](http://html5boilerplate.com/)
 - [Twitter Bootstrap](http://twitter.github.com/bootstrap/)
-- [Semantic GRid System](http://semantic.gs)
+- [Semantic Grid System](http://semantic.gs)
 
 
 Caution:
