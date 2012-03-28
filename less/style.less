@@ -1,7 +1,24 @@
 
+@import "libs/html5-boilerplate/normalize.less";
+@import "libs/bootstrap/reset.less";
+
+.useBoostrapResets() {
+	// By default use the resets from HTML5 Boilerplate
+	.include-BoilerplateResets();
+}
+.useBoostrapResets(@bool) when not (@bool = true)  {
+	// By default use the resets from HTML5 Boilerplate
+	.include-BoilerplateResets();
+}
+.useBoostrapResets(@bool) when (@bool = true)  {
+	// Use Bootstrap Reset instead
+	.include-BoostrapResets();
+}
+
+
 /* Choose Reset Styles*/
-@import "libs/html5-boilerplate/normalize.less";	// H5BP Reset
-//@import "libs/bootstrap/reset.less"; // Bootstrap Reset
+.useBoostrapResets(false);
+ 
  
  
 /*!
@@ -16,10 +33,6 @@
 @import "libs/bootstrap/variables.less";
 @import "libs/bootstrap/mixins.less";
 
-
-// Core variables and mixins
-@import "libs/bootstrap/variables.less"; // Modify this for custom colors, font-sizes, etc
-@import "libs/bootstrap/mixins.less";
 
 // Grid system and page structure
 @import "libs/bootstrap/scaffolding.less";
@@ -70,7 +83,7 @@
 @import "libs/bootstrap/hero-unit.less";
 
 // Utility classes
-@import "libs/bootstrap/utilities.less"; // Has to be last to override when necessary
+//@import "libs/bootstrap/utilities.less"; // Has to be last to override when necessary
 
 
 /* ===== Primary Styles ========================================================
@@ -120,6 +133,7 @@
 			}
 	}
 }   
+
 
 
 @import "libs/html5-boilerplate/media-queries.less";
